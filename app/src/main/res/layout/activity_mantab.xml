@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/ubha"
+    android:layout_height="match_parent"
+android:orientation="vertical"
+   >
+    <TextView
+        android:layout_width="match_parent"
+        android:text="SALDO KAS "
+        android:id="@+id/idupa"
+        android:textAlignment="center"
+        android:textColor="@color/putiih"
+        android:textSize="30dp"
+        android:layout_marginTop="140dp"
+        android:layout_height="wrap_content"/>
+
+<TextView
+    android:layout_width="match_parent"
+    android:text="hutang anda 0"
+    android:textAlignment="center"
+    android:textColor="@color/putiih"
+    android:id="@+id/tamplhutang"
+    android:layout_height="wrap_content"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="110dp"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:layout_width="100dp"
+        android:background="@drawable/btsn"
+        android:layout_height="120dp"
+        android:textColor="@color/putiih"
+        android:text="Rincian"
+        android:onClick="dsghd"
+        android:layout_marginRight="50dp"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <Button
+        android:layout_width="100dp"
+        android:background="@drawable/btsn"
+        android:layout_height="120dp"
+        android:text="Pengajuan Hutang"
+        android:id="@+id/idhhiutang"
+        android:textColor="@color/putiih"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="327dp" />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="100dp"
+            android:background="@drawable/btsn"
+            android:layout_height="120dp"
+            android:textColor="@color/putiih"
+            android:text="Hubungi Admin"
+          android:onClick="admm"
+            android:layout_marginRight="50dp"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="327dp" />
+        <Button
+            android:layout_width="100dp"
+            android:background="@drawable/btsn"
+            android:layout_height="120dp"
+            android:text="Tentang"
+android:onClick="dhshdh"
+            android:textColor="@color/putiih"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="327dp" />
+    </LinearLayout>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/txpayah"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/txttampil"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

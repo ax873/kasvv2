@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ubh"
+    android:layout_height="match_parent"
+    tools:context=".rayonbuntu.kaslain">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:background="@drawable/mybaganime"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:src="@drawable/icom"
+            android:layout_gravity="center"
+            android:layout_height="50dp"/>
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="SALDO KAS RAYON"
+        android:textAlignment="center"
+        android:textColor="@color/putiih"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+ <TextView
+     android:layout_width="match_parent"
+     android:id="@+id/rayondipo"
+     android:text="rayondipo"
+     android:textSize="20dp"
+     android:layout_height="wrap_content"/>
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/rayonBuntu"
+            android:text="buntu"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/rayontunasbangsa"
+            android:text="tunas bangsa"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/rayongebangsari"
+            android:text="gebangsari"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/karangsari"
+            android:text="karangsari"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/smpadisana"
+            android:text="adisana"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/randegan"
+            android:text="randegan"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/gunungnagnka"
+            android:text="gunungnangka"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/rayonsmkketingan"
+            android:text="ketingan"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

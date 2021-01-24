@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".Ranting.RegisterActivity">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="REGISTRASI "
+        android:textAlignment="center"
+        android:textSize="30dp"
+              android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Masukan Email "
+        android:textSize="10dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/email"
+
+            android:layout_gravity="center"
+            android:textStyle="bold"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Masukan Password "
+        android:textSize="10dp"
+        android:layout_marginLeft="55dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/idpass"
+
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Masukan Nama"
+        android:textSize="10dp"
+        android:layout_marginLeft="55dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/idusername"
+
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Nama Anda" />
+   <TextView
+       android:layout_width="match_parent"
+       android:textSize="20dp"
+       android:id="@+id/idstatsu"
+       android:layout_marginTop="10dp"
+       android:text="Status"
+       android:textAlignment="center"
+       android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/status"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/adminrnting"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin Ranting" />
+
+        <RadioButton
+            android:id="@+id/adminrayon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin Rayon" />
+
+
+        <RadioButton
+            android:id="@+id/anggota"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anggota" />
+        </RadioGroup>
+    </LinearLayout>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:text="Rayon"
+          android:textSize="20dp"
+          android:layout_marginTop="20dp"
+          android:textAlignment="center"
+          android:layout_height="wrap_content"/>
+       <TextView
+           android:layout_width="match_parent"
+android:text="Buntu"
+           android:id="@+id/textrayon"
+           android:textAlignment="center"
+           android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnregister"
+        android:layout_width="120dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+   android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn"
+        android:text="Daftar"
+        android:textColor="#FFFF"
+        android:textStyle="bold"
+        />
+       <ScrollView
+           android:layout_width="match_parent"
+           android:layout_marginLeft="20dp"
+           android:layout_marginRight="20dp"
+
+           android:layout_height="match_parent">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+                <RadioGroup
+            android:id="@+id/idrayon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                    <RadioButton
+                        android:id="@+id/idpilihsalahsatu"
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pilih salah Satu" />
+
+            <RadioButton
+                android:id="@+id/idbuntu"
+                android:layout_marginRight="20dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buntu" />
+
+            <RadioButton
+                android:id="@+id/idiponegoro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SMA Diponegoro" />
+
+
+            <RadioButton
+                android:id="@+id/idkarangsari"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Karangsari" />
+            <RadioButton
+                android:id="@+id/gebang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gebang sari" />
+
+            <RadioButton
+                android:id="@+id/idtunas"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:text="SMK Plus Tunas Bangsa" />
+            <RadioButton
+                android:id="@+id/idgunung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gunung Nangka" />
+
+            <RadioButton
+                android:id="@+id/idketingan2"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:text="SMP Negeri 2 Ketingan" />
+            <RadioButton
+                android:id="@+id/idadisane"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SMP Negeri 2 Adisana" />
+
+            <RadioButton
+
+                android:layout_width="wrap_content"
+                android:id="@+id/idrandegan"
+                android:layout_height="wrap_content"
+                android:text="Randegan" />
+
+        </RadioGroup>
+
+
+              </LinearLayout>
+       </ScrollView>
+
+</LinearLayout>

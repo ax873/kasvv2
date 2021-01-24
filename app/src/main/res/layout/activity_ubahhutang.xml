@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Ranting.ubahhutang">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/mybaganime"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:src="@drawable/icom"
+            android:layout_gravity="center"
+            android:layout_height="50dp"/>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="330dp"
+
+
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:paddingTop="20dp"
+        android:layout_height="550dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="#F6F6F6"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <TextView
+        android:id="@+id/htidtitl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hutang"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/htidubah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="MY KAS "
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="40dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Nama "
+                android:textSize="10dp"
+                android:textStyle="bold"
+
+                android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="Nama"
+        android:id="@+id/htnama"
+        android:enabled="false" android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Tanggal "
+                android:textSize="10dp"
+                android:textStyle="bold"
+
+                android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="Tanggal"
+        android:id="@+id/htranting"
+        android:enabled="false"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_width="220dp" android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_datepicker"
+        android:layout_marginBottom="10dp"
+        android:layout_height="20dp"
+        android:layout_width="220dp"
+        android:layout_gravity="center"
+        android:background="@color/putiih"
+        android:layout_marginTop="-12dp"
+        android:textAlignment="center"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Jumlah "
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/htjumlah"
+        android:inputType="number"
+        android:gravity="center"
+        android:textColor="#F6F6F6"
+        android:focusable="true"
+        android:digits="0123456789.,"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        />
+    <EditText
+        android:layout_width="170dp"
+        android:id="@+id/etnumber"
+        android:text="Jumlah"
+        android:enabled="false"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Deskripsi "
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/htdesk"
+        android:hint="Tulis Keterangan"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_width="220dp"
+        android:textAlignment="center"
+        android:layout_height="120dp"/>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+  android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_marginTop="30dp"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <Button
+
+        android:layout_width="120dp"
+        android:background="@drawable/btn"
+        android:id="@+id/hthapus"
+android:onClick="httolakutangf"
+
+        android:layout_marginRight="30dp"
+        android:textColor="#FFFF"
+        android:text="Tolak Hutang"
+        android:layout_height="wrap_content"/>
+    <Button
+
+        android:layout_width="120dp"
+        android:background="@drawable/btn"
+        android:id="@+id/htsimpan"
+        android:textColor="#FFFF"
+        android:textStyle="bold"
+        android:text="Terima Hutang"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/htidht"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/htuwuht"
+
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/htbantuan"
+
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/id1user"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/id2pass"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/htid"
+        android:hint="id"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
+        android:enabled="false"
+android:visibility="invisible"
+        android:layout_height="wrap_content"/>
+
+        </LinearLayout> </androidx.cardview.widget.CardView>
+
+</LinearLayout>

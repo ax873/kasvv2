@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/pemasukan"
+    android:layout_height="match_parent"
+    tools:context=".Ranting.hutang">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+      android:background="@drawable/mybaganime"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:src="@drawable/icom"
+            android:layout_gravity="center"
+            android:layout_height="50dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+android:textColor="@color/putiih"
+            android:text="SALDO KAS SEKARANG"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:text="berapa?"
+            android:textColor="@color/putiih"
+            android:layout_gravity="center"
+            android:id="@+id/idapah1"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </LinearLayout>
+   <androidx.cardview.widget.CardView
+       android:layout_width="330dp"
+       android:layout_gravity="center"
+       android:layout_marginTop="20dp"
+       android:layout_height="450dp">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="#F6F6F6"
+           android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/httxttitle"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:text="JARINGAN HILANG"
+        android:textSize="30dp"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:text="Nama "
+    android:textStyle="bold"
+    android:textSize="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_height="wrap_content"/>
+
+    <EditText
+        android:hint="Nama"
+        android:enabled="false"
+        android:id="@+id/httxtnama"
+
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:text="Tanggal"
+               android:textSize="10dp"
+               android:textStyle="bold"
+               android:layout_height="wrap_content"/>
+
+           <EditText
+        android:hint="Tanggal"
+        android:id="@+id/httxtranting"
+        android:enabled="false"
+        android:layout_width="220dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_datepicker"
+        android:layout_marginBottom="10dp"
+        android:layout_height="20dp"
+        android:layout_width="220dp"
+        android:layout_gravity="center"
+    android:background="@color/putiih"
+        android:layout_marginTop="-12dp"
+        android:textAlignment="center" />
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:text="Jumlah"
+               android:textSize="10dp"
+               android:textStyle="bold"
+               android:layout_height="wrap_content"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:focusable="true"
+           android:focusableInTouchMode="true"
+           android:gravity="center"
+           android:orientation="horizontal"
+           android:layout_height="wrap_content">
+
+           <EditText
+        android:id="@+id/httxtjumlah"
+                android:textColor="#F6F6F6"
+               android:focusable="true"
+               android:digits="0123456789.,"
+               android:layout_gravity="center"
+               android:ems="10"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+
+        android:textStyle="bold"
+        android:inputType="number" />
+            <EditText
+          android:layout_width="170dp"
+          android:id="@+id/etnumber"
+android:text="Jumlah"
+          android:enabled="false"
+
+          android:layout_height="wrap_content"/>
+  </LinearLayout>
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:text="Deskripsi"
+               android:textStyle="bold"
+               android:textSize="10dp"
+               android:layout_marginTop="20dp"
+               android:layout_height="wrap_content"/>
+
+           <EditText
+        android:id="@+id/httxtdesk"
+        android:hint="Tulis Keterangan"
+
+        android:layout_width="220dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_height="70dp"/>
+
+
+
+       </LinearLayout> </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="120dp"
+        android:textStyle="bold"
+
+        android:background="@drawable/btn"
+        android:id="@+id/htbtsimpan"
+        android:text="simpan"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFF"
+        android:layout_gravity="center"
+
+
+        android:layout_height="wrap_content"/>
+
+
+
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/httxtidkas"
+        android:enabled="false"
+        android:hint="Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/htidtampilsaldo"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/htIdid"
+
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/txpayah"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

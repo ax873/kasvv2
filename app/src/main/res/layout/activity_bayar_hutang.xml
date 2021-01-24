@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bayar"
+    android:layout_height="match_parent"
+    tools:context=".Ranting.BayarHutang">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:background="@drawable/mybaganime"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:src="@drawable/icom"
+            android:layout_gravity="center"
+            android:layout_height="50dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="330dp"
+
+        android:layout_marginTop="35dp"
+
+        android:layout_gravity="center"
+        android:layout_height="350dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F6F6F6"
+            android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/vnama"
+        android:layout_marginTop="50dp"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/vid"
+
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+
+        android:text="jsbhjbh"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:text="Hutang Anda Mohon Segera di Lunasi"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"/>
+<TextView
+    android:layout_width="match_parent"
+    android:text="saldo"
+    android:layout_marginTop="10dp"
+    android:id="@+id/saldohutang"
+android:textAlignment="center"
+    android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/tjumlahbayar"
+        android:inputType="number"
+        android:gravity="center"
+        android:textColor="#F6F6F6"
+        android:focusable="true"
+        android:digits="0123456789.,"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+             <EditText
+          android:layout_width="170dp"
+                 android:id="@+id/etnumber"
+                 android:text="Jumlah"
+          android:enabled="false"
+          android:layout_height="wrap_content"/>
+  </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/didtoken"
+
+        android:visibility="invisible"
+        android:layout_height="wrap_content"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <Button
+        android:layout_width="120dp"
+        android:textColor="@color/putiih"
+  android:text="Bayar"
+        android:layout_gravity="center"
+        android:background="@drawable/btn"
+
+        android:id="@+id/idbayar"
+
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_width="120dp"
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="center"
+        android:textColor="@color/putiih"
+        android:text="Lunasi"
+
+        android:background="@drawable/btn"
+android:id="@+id/hapsu"
+        android:layout_height="wrap_content"
+/>
+
+
+</LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+<TextView
+    android:layout_width="match_parent"
+    android:text="hasil"
+    android:textAlignment="center"
+    android:id="@+id/idhsil"
+    android:visibility="invisible"
+    android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="Saldo Kas Sekarang"
+        android:textColor="@color/putiih"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/xtxsaldo"
+        android:text="saldo"
+        android:textSize="30dp"
+        android:textColor="@color/putiih"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="700dp"
+        android:layout_width="match_parent"
+        android:id="@+id/arepdisimpan"
+
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/vranting"
+
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/vdesk"
+
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/vtit"
+
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/dtampiltokenn"
+        android:textSize="30dp"
+        android:textAlignment="center"
+
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/id1userruser"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/i2paspas"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

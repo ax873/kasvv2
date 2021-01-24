@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    android:layout_height="match_parent"
+   >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/ketrayon"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/mybaganime"
+        android:layout_height="50dp">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_gravity="right"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+<EditText
+    android:layout_width="230dp"
+    android:id="@+id/iidcari"
+    android:hint="Cari Berdasarkan Deskripsi"
+    android:layout_height="wrap_content"/>
+<Button
+    android:layout_width="wrap_content"
+    android:id="@+id/idklikcari"
+    android:background="@drawable/cari"
+    android:layout_marginRight="20dp"
+    android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+<ListView
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:divider="@null"
+    android:dividerHeight="0dp"
+    android:transcriptMode="alwaysScroll"
+    android:stackFromBottom="true"
+    android:layout_height="match_parent"
+
+    android:id="@+id/lisviewkas"/>
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SALDO KAS SEBESAR"
+        android:textAlignment="center"/>
+    <TextView
+
+        android:id="@+id/idapayah1"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:gravity="center_horizontal" />
+
+
+<Button
+    android:layout_width="120dp"
+    android:text="Home"
+    android:layout_marginBottom="10dp"
+    android:textColor="#FFF"
+    android:background="@drawable/btn"
+    android:textAlignment="center"
+    android:layout_gravity="center"
+    android:onClick="hhome"
+    android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_gravity="right"
+        android:id="@+id/idapayah"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/yeray"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="maruf.com.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icom"
+        android:label="PSHT kas"
+        android:roundIcon="@drawable/icom"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <activity android:name=".rayonbuntu.kaslain" />
+        <activity android:name=".Ranting.Profilname" />
+        <activity android:name=".push.MainActivity" />
+        <activity android:name=".Ranting.tampilan.Mantab" />
+        <activity android:name=".Ranting.Bayar_Client" />
+        <activity android:name=".Ranting.tokenbayar" />
+        <activity android:name=".Ranting.BayarHutang" />
+        <activity android:name=".Ranting.ubahhutang" />
+        <activity android:name=".Ranting.hutang" />
+        <activity android:name=".Ranting.tampilan.keluaarubah" />
+        <activity android:name=".Ranting.Main2Activity" />
+        <activity android:name=".rayonbuntu.MainActivity" />
+        <activity android:name=".rayonbuntu.Main2Activity" />
+        <activity android:name=".Ranting.MenuUtama" />
+        <activity android:name=".Ranting.MainSaldo" />
+        <activity android:name=".rayonbuntu.MainSaldo" />
+        <activity android:name=".Ranting.coba.coba" />
+        <activity android:name=".coba" />
+        <activity android:name=".Ranting.tampilan.Tampilhutang" />
+        <activity android:name=".rayonbuntu.tampilan.MainTampil" />
+        <activity android:name=".rayonbuntu.tampilan.MainUbah" />
+        <activity android:name=".tampil" />
+        <activity android:name=".menunavigasi" />
+        <activity android:name=".Ranting.tampilan.MainUbah" />
+        <activity android:name=".Ranting.MainActivity" />
+        <activity android:name=".Ranting.tampilan.MainTampil" />
+        <activity android:name=".obrolan.obrolan" />
+        <activity android:name=".Ranting.RegisterActivity" />
+        <activity android:name=".profile.profileuser" />
+        <activity android:name=".Ranting.LoginActivity" />
+
+            <activity android:name=".loginnomo.MainActivity"/>
+                <activity android:name=".Ranting.splace">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".push.FirebaseService"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+</manifest>

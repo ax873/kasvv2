@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+android:background="@drawable/ubh"
+    android:layout_height="match_parent"
+    tools:context=".Ranting.tampilan.keluaarubah">
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/ketrayon"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:background="@drawable/mybaganime"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:src="@drawable/icom"
+            android:layout_gravity="center"
+            android:layout_height="50dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="330dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_height="450dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F6F6F6"
+            android:orientation="vertical">
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="y"
+        android:textAlignment="center"
+        android:id="@+id/tcttitle"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/Idid1ubah"
+        android:textAlignment="center"
+        android:text="MY KAS "
+        android:textSize="30dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="nama"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/txtnama1"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="ranting"
+        android:id="@+id/txtranting1"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/txtjumlah1"
+        android:inputType="number"
+        android:gravity="center"
+        android:textColor="#F6F6F6"
+        android:focusable="true"
+        android:digits="0123456789.,"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+            <EditText
+                android:layout_width="170dp"
+                android:id="@+id/etnumber"
+                android:text="Jumlah"
+                android:enabled="false"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    <EditText
+        android:id="@+id/txtdesk1"
+        android:hint="deskripsi"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="220dp"
+        android:layout_height="120dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+    <Button
+
+        android:id="@+id/bthapus"
+        android:layout_width="120dp"
+
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn"
+        android:text="hapus"
+        android:textColor="#FFFF"
+        android:textStyle="bold" />
+        <Button
+            android:layout_width="120dp"
+
+            android:background="@drawable/btn"
+            android:id="@+id/btsimpan1"
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            android:text="simpan"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Iid1ubah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/uwu"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="220dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtidkas1"
+        android:hint="id"
+        />
+
+        </LinearLayout> </androidx.cardview.widget.CardView>
+</LinearLayout>

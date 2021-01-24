@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".MainSaldo">
+
+    <TextView
+        android:id="@+id/susaldo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Saldo Kamu"
+        android:textAlignment="center"
+        android:textSize="50dp"
+        tools:layout_editor_absoluteX="-28dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <EditText
+        android:hint="Masukan Nilai"
+        android:id="@+id/idisisaldo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/btsimpansaldo"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Simpan"
+        android:textColor="#FFFF"
+        android:textStyle="bold"
+        android:background="@drawable/btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.556" />
+
+    <Button
+        android:id="@+id/btubahsaldo"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Ubah" android:textColor="#FFFF"
+        android:textStyle="bold"
+        android:background="@drawable/btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bthapussaldo"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Hapus" android:background="@drawable/btn"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0" android:textColor="#FFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.574" />
+</androidx.constraintlayout.widget.ConstraintLayout>

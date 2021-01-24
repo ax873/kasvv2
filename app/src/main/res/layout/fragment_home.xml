@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+android:background="@drawable/navigas"
+     android:layout_height="match_parent"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:id="@+id/idgambar"
+        android:layout_gravity="center"
+        app:civ_border_width="2dp"
+android:background="@drawable/icom"
+        app:civ_border_color="#2196F3"
+          android:layout_height="100dp"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="SALDO KAS "
+        android:id="@+id/idupa"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="hutang anda 0"
+        android:textAlignment="center"
+        android:id="@+id/tamplhutang"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="90dp"
+            android:background="@drawable/btsn"
+            android:layout_height="50dp"
+            android:text="Pemasukan"
+            android:id="@+id/idmsukrayon"
+
+            android:textSize="7dp"
+            android:enabled="false"
+
+            android:textColor="@color/putiih"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="327dp" />
+
+        <Button
+            android:text="Set Saldo Kas Rayon"
+            android:id="@+id/idth"
+
+            android:layout_width="90dp"
+            android:background="@drawable/btsn"
+            android:layout_height="50dp"
+
+            android:enabled="false"
+            android:layout_marginLeft="20dp"
+            android:textSize="7dp"
+            android:textColor="@color/putiih"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="327dp" />
+        <Button
+            android:layout_width="90dp"
+            android:background="@drawable/btsn"
+
+            android:layout_marginLeft="20dp"
+            android:layout_height="50dp"
+            android:textColor="@color/putiih"
+            android:text="Pengeluaran"
+            android:id="@+id/idkeluarrayon"
+            android:textSize="7dp"
+            android:enabled="false"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="327dp" />
+
+    </LinearLayout>
+     <androidx.cardview.widget.CardView
+        android:layout_width="330dp"
+         android:layout_marginTop="30dp"
+         android:layout_gravity="center"
+        app:cardBackgroundColor="#8DC7F6"
+        android:layout_height="3dp">
+</androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="90dp"
+            android:background="@drawable/btsn"
+            android:layout_height="50dp"
+            android:enabled="false"
+
+            android:layout_marginRight="20dp"
+            android:text="Bayar Hutang"
+            android:id="@+id/idbayarhutang"
+            android:textSize="8dp"
+            android:textColor="@color/putiih"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="327dp" />
+        <Button
+            android:layout_width="90dp"
+
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:enabled="false"
+            android:background="@drawable/btsn"
+            android:textColor="@color/putiih"
+            android:text="Lihat Kas Rayon lain"
+            android:id="@+id/idlihatkasrayonlain"
+            android:textSize="8dp"
+
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="327dp" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+
+            android:background="@drawable/btsn"
+            android:textSize="7dp"
+            android:enabled="false"
+            android:layout_width="90dp"
+
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:text=" Hutang"
+            android:id="@+id/idhhiutang"
+            android:textColor="@color/putiih"
+           />
+
+        <Button
+
+            android:layout_marginLeft="20dp"
+            android:layout_width="90dp"
+            android:background="@drawable/btsn"
+            android:layout_height="50dp"
+            android:enabled="false"
+            android:textSize="8dp"
+            android:text="Lihat Rincian Rayon"
+            android:id="@+id/rincianrayon"
+            android:textColor="@color/putiih"
+
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:layout_width="330dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="#8DC7F6"
+            android:layout_height="3dp">
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:layout_width="90dp"
+            android:background="@drawable/btsn"
+            android:layout_height="50dp"
+            android:textColor="@color/putiih"
+            android:enabled="false"
+android:layout_marginTop="10dp"
+            android:text="Rincian Kas Ranting"
+            android:id="@+id/idkasranting"
+            android:textSize="7dp"
+
+      />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+
+        android:textAlignment="center"
+        android:id="@+id/stastus"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/txttampil"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        android:text="saldo ranting"
+
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txpayah"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="SALDO KAS "
+        android:id="@+id/idr"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="360dp"
+        android:layout_marginTop="20dp"
+       android:background="@drawable/btn"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="#1B8AE4"
+        android:layout_height="match_parent">
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
