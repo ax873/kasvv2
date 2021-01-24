@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import maruf.com.myapplication.R;
+import maruf.com.myapplication.Ranting.Rekapitulasi.RekapReportActivity;
 import maruf.com.myapplication.Ranting.tampilan.MainTampil;
 import maruf.com.myapplication.Ranting.tampilan.Tampilhutang;
 import maruf.com.myapplication.obrolan.obrolan;
@@ -30,29 +31,30 @@ import maruf.com.myapplication.rayonbuntu.kaslain;
 
 
 public class MenuUtama extends AppCompatActivity {
-private String KEYTITLE="NAMA";
-DatabaseReference muncul,asd,dbasd;
-TextView ididan,tampilhutang;
-FirebaseAuth firebaseAuth;
-FirebaseUser firebaseUser;
-LinearLayout mylayout;
-Button amasuk,akeluar,arinci,aset,akonfir,apengumuman;
-AnimationDrawable animationDrawable;
-Button hutang;
+    private String KEYTITLE = "NAMA";
+    DatabaseReference muncul, asd, dbasd;
+    TextView ididan, tampilhutang;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+    LinearLayout mylayout;
+    Button amasuk, akeluar, arinci, aset, akonfir, apengumuman;
+    AnimationDrawable animationDrawable;
+    Button hutang;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_utama);
-hutang=findViewById(R.id.idhutng);
-amasuk=findViewById(R.id.amasuk);
-akeluar=findViewById(R.id.akeluar);
-arinci=findViewById(R.id.arinci);
-aset=findViewById(R.id.aset);
-akonfir=findViewById(R.id.akonfir);
-apengumuman=findViewById(R.id.apengumuman);
+        hutang = findViewById(R.id.idhutng);
+        amasuk = findViewById(R.id.amasuk);
+        akeluar = findViewById(R.id.akeluar);
+        arinci = findViewById(R.id.arinci);
+        aset = findViewById(R.id.aset);
+        akonfir = findViewById(R.id.akonfir);
+        apengumuman = findViewById(R.id.apengumuman);
 
-        firebaseAuth=FirebaseAuth.getInstance();
-        firebaseUser=firebaseAuth.getCurrentUser();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         dbasd = FirebaseDatabase.getInstance().getReference("pemasukan").child(uid);
 //        mylayout=(LinearLayout) findViewById(R.id.mylayout);
@@ -68,50 +70,47 @@ apengumuman=findViewById(R.id.apengumuman);
                 ididan = findViewById(R.id.ididan);
                 tampilhutang = findViewById(R.id.tamplhutang);
 
-                Button but =findViewById(R.id.arinci);
-                Animation animation= AnimationUtils.loadAnimation(MenuUtama.this,R.anim.sliderig);
+                Button but = findViewById(R.id.arinci);
+                Animation animation = AnimationUtils.loadAnimation(MenuUtama.this, R.anim.sliderig);
                 but.startAnimation(animation);
                 arinci.setVisibility(View.VISIBLE);
 
-                Button b =findViewById(R.id.amasuk);
-                Animation animationb= AnimationUtils.loadAnimation(MenuUtama.this,R.anim.sliderig);
+                Button b = findViewById(R.id.amasuk);
+                Animation animationb = AnimationUtils.loadAnimation(MenuUtama.this, R.anim.sliderig);
                 amasuk.setVisibility(View.VISIBLE);
                 b.startAnimation(animationb);
 
-                Button ba =findViewById(R.id.akeluar);
-                Animation animationba= AnimationUtils.loadAnimation(MenuUtama.this,R.anim.sliderig);
+                Button ba = findViewById(R.id.akeluar);
+                Animation animationba = AnimationUtils.loadAnimation(MenuUtama.this, R.anim.sliderig);
                 akeluar.setVisibility(View.VISIBLE);
                 ba.startAnimation(animationba);
 
-                Button be =findViewById(R.id.aset);
-                Animation animationbe= AnimationUtils.loadAnimation(MenuUtama.this,R.anim.sliderig);
+                Button be = findViewById(R.id.aset);
+                Animation animationbe = AnimationUtils.loadAnimation(MenuUtama.this, R.anim.sliderig);
                 aset.setVisibility(View.VISIBLE);
                 be.startAnimation(animationbe);
 
-                Button ber =findViewById(R.id.akonfir);
-                Animation animationber= AnimationUtils.loadAnimation(MenuUtama.this,R.anim.sliderig);
+                Button ber = findViewById(R.id.akonfir);
+                Animation animationber = AnimationUtils.loadAnimation(MenuUtama.this, R.anim.sliderig);
                 akonfir.setVisibility(View.VISIBLE);
                 ber.startAnimation(animationber);
 
 
-                Button bet =findViewById(R.id.apengumuman);
-                Animation animationbet= AnimationUtils.loadAnimation(MenuUtama.this,R.anim.sliderig);
+                Button bet = findViewById(R.id.apengumuman);
+                Animation animationbet = AnimationUtils.loadAnimation(MenuUtama.this, R.anim.sliderig);
                 apengumuman.setVisibility(View.VISIBLE);
                 bet.startAnimation(animationbet);
 
 
-
-
-                Animation animationdu= AnimationUtils.loadAnimation(MenuUtama.this,R.anim.sliderig);
+                Animation animationdu = AnimationUtils.loadAnimation(MenuUtama.this, R.anim.sliderig);
                 hutang.setVisibility(View.VISIBLE);
                 hutang.startAnimation(animationdu);
 //                String mahasiswa = dataSnapshot.getValue(String.class);
                 String id = dataSnapshot.child("id").getValue(String.class);
                 String user_id = dataSnapshot.child("username").getValue(String.class);
 
-             ididan.setText(user_id);
-               // tampilhutang.setText(id);
-
+                ididan.setText(user_id);
+                // tampilhutang.setText(id);
 
             }
 
@@ -120,7 +119,6 @@ apengumuman=findViewById(R.id.apengumuman);
 
             }
         });
-
 
 
 
@@ -129,28 +127,26 @@ apengumuman=findViewById(R.id.apengumuman);
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                tampilhutang=findViewById(R.id.tamplhutang);
+                tampilhutang = findViewById(R.id.tamplhutang);
 //                String mahasiswa = dataSnapshot.getValue(String.class);
                 String ad = dataSnapshot.child("jumlah").getValue(String.class);
 
-                tampilhutang.setText("hutang anda "+ad);
-String tamp= tampilhutang.getText().toString();
+                tampilhutang.setText("hutang anda " + ad);
+                String tamp = tampilhutang.getText().toString();
 
-if(tamp.equals("hutang anda null")){
-    hutang.setEnabled(true);
-    tampilhutang.setVisibility(View.INVISIBLE);
-}else if(tamp.equals("hutang anda 0")){
+                if (tamp.equals("hutang anda null")) {
+                    hutang.setEnabled(true);
+                    tampilhutang.setVisibility(View.INVISIBLE);
+                } else if (tamp.equals("hutang anda 0")) {
                     hapusii();
                     hutang.setVisibility(View.VISIBLE);
-    hutang.setText("HUTANG");
+                    hutang.setText("HUTANG");
 
+                } else {
+                    hutang.setEnabled(false);
+                    hutang.setText("Lunasi dulu");
+                    hutang.setVisibility(View.INVISIBLE);
                 }
-
-else{
-    hutang.setEnabled(false);
-    hutang.setText("Lunasi dulu");
-    hutang.setVisibility(View.INVISIBLE);
-}
 
             }
 
@@ -160,6 +156,13 @@ else{
             }
         });
 
+
+        findViewById(R.id.btnRekap).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuUtama.this, RekapReportActivity.class));
+            }
+        });
     }
 
 //    @Override
@@ -184,37 +187,37 @@ else{
                     public void onSuccess(Void aVoid) {
 
 
-
                     }
-                });}
+                });
+    }
 
     public void uwhjk(View view) {
 
-        Intent a =new Intent(MenuUtama.this, MainActivity.class);
-        String nua="PEMASUKAN";
-        a.putExtra(KEYTITLE,nua);
+        Intent a = new Intent(MenuUtama.this, MainActivity.class);
+        String nua = "PEMASUKAN";
+        a.putExtra(KEYTITLE, nua);
         startActivity(a);
     }
 
     public void gtdjg(View view) {
-        String nua="PENGELUARAN";
-        Intent a =new Intent(this, Main2Activity.class);
-        a.putExtra(KEYTITLE,nua);
+        String nua = "PENGELUARAN";
+        Intent a = new Intent(this, Main2Activity.class);
+        a.putExtra(KEYTITLE, nua);
         startActivity(a);
     }
 
     public void uwuwuwuw(View view) {
 
-        Intent g =new Intent(MenuUtama.this, MainSaldo.class);
+        Intent g = new Intent(MenuUtama.this, MainSaldo.class);
         startActivity(g);
     }
 
     public void jsjhihf(View view) {
 //        if(tampilhutang.equals("HUTANG"))
 //        {
-        String nua="HUTANG";
-        Intent a =new Intent(MenuUtama.this, hutang.class);
-        a.putExtra(KEYTITLE,nua);
+        String nua = "HUTANG";
+        Intent a = new Intent(MenuUtama.this, hutang.class);
+        a.putExtra(KEYTITLE, nua);
         startActivity(a);
 //        }else{
 //            Toast.makeText(getApplicationContext(),"Bayar Hutang dulu Baru Hutang lagi ",Toast.LENGTH_LONG).show();
@@ -224,22 +227,22 @@ else{
 
     public void a(View view) {
 
-        Intent gj =new Intent(MenuUtama.this, Tampilhutang.class);
+        Intent gj = new Intent(MenuUtama.this, Tampilhutang.class);
         startActivity(gj);
     }
 
     public void ihrbr(View view) {
-        Intent gjf =new Intent(MenuUtama.this, BayarHutang.class);
+        Intent gjf = new Intent(MenuUtama.this, BayarHutang.class);
         startActivity(gjf);
     }
 
     public void jkkjn(View view) {
-        Intent gjf =new Intent(MenuUtama.this, tokenbayar.class);
+        Intent gjf = new Intent(MenuUtama.this, tokenbayar.class);
         startActivity(gjf);
     }
 
     public void kkfd(View view) {
-        Intent gjf =new Intent(MenuUtama.this, MainTampil.class);
+        Intent gjf = new Intent(MenuUtama.this, MainTampil.class);
         startActivity(gjf);
     }
 
@@ -249,26 +252,26 @@ else{
 
     public void wuhh(View view) {
         FirebaseAuth.getInstance().signOut();
-        Intent intent =new Intent(MenuUtama.this,LoginActivity.class);
+        Intent intent = new Intent(MenuUtama.this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-startActivity(intent);
+        startActivity(intent);
     }
 
 
     public void nnd(View view) {
-        Intent gjf =new Intent(MenuUtama.this, kaslain.class);
+        Intent gjf = new Intent(MenuUtama.this, kaslain.class);
         startActivity(gjf);
 
     }
 
     public void jsdfjkb(View view) {
-        Intent gjf =new Intent(MenuUtama.this, RegisterActivity.class);
+        Intent gjf = new Intent(MenuUtama.this, RegisterActivity.class);
         startActivity(gjf);
     }
 
     public void obro(View view) {
-        Intent gsf =new Intent(MenuUtama.this, obrolan.class);
+        Intent gsf = new Intent(MenuUtama.this, obrolan.class);
         startActivity(gsf);
     }
 }

@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimaryDark">#03A9F4</color>
     <color name="putiih">#fff</color>
+    <color name="lightTransparent">#80FFFFFF</color>
+    <color name="darkTransparent">#80000000</color>
 </resources>

@@ -32,18 +32,19 @@ import maruf.com.myapplication.Ranting.setterr.setkas;
 
 public class MainTampil extends AppCompatActivity {
     private ListView listviewkas;
-    public  static  final String KS_NAMA="nama";
-    public  static  final String KS_ID="id";
-    public  static  final String KS_RANTING="ranting";
-    public  static  final String KS_JUMLAH="jumlah";
-    public  static  final String KS_DESK="desk";
-    public  static  final String KS_TITLE="title";
+    public static final String KS_NAMA = "nama";
+    public static final String KS_ID = "id";
+    public static final String KS_RANTING = "ranting";
+    public static final String KS_JUMLAH = "jumlah";
+    public static final String KS_DESK = "desk";
+    public static final String KS_TITLE = "title";
     EditText caari;
     TextView txtapayah;
     DatabaseReference databasw1;
     List<setkas> kaslist;
     Button klik;
     DatabaseReference databasekas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,18 +54,16 @@ public class MainTampil extends AppCompatActivity {
         databasekas = FirebaseDatabase.getInstance().getReference("pemasukan");
         kaslist = new ArrayList<>();
         listviewkas = (ListView) findViewById(R.id.lisviewkas);
-        txtapayah=(TextView) findViewById(R.id.idapayah);
-caari=findViewById(R.id.iidcari);
-klik=findViewById(R.id.idklikcari);
+        txtapayah = (TextView) findViewById(R.id.idapayah);
+        caari = findViewById(R.id.iidcari);
+        klik = findViewById(R.id.idklikcari);
 
-klik.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        cari();
-    }
-});
-
-
+        klik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cari();
+            }
+        });
 
 
         databasw1.addValueEventListener(new ValueEventListener() {
@@ -76,17 +75,16 @@ klik.setOnClickListener(new View.OnClickListener() {
                 txtapayah.setText(value.getSaldo());
 
                 int hasil;
-             TextView   tuunjuk = (TextView) findViewById(R.id.idapayah1);
+                TextView tuunjuk = (TextView) findViewById(R.id.idapayah1);
                 NumberFormat format = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
-                hasil= Integer.parseInt(txtapayah.getText().toString());
+                hasil = Integer.parseInt(txtapayah.getText().toString());
                 Locale loca = new Locale("in", "ID");
                 NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(loca);
-                tuunjuk.setText(formatRupiah.format((double)hasil));
+                tuunjuk.setText(formatRupiah.format((double) hasil));
                 txtapayah.setVisibility(View.INVISIBLE);
 
 
             }
-
 
 
             @Override
@@ -100,14 +98,14 @@ klik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                setkas kas=kaslist.get(position);
-                Intent a =new Intent(getApplicationContext(),MainUbah.class);
-                a.putExtra(KS_ID,kas.getIdkas());
-                a.putExtra(KS_NAMA,kas.getNama());
-                a.putExtra(KS_RANTING,kas.getRanting());
-                a.putExtra(KS_JUMLAH,kas.getJumlah());
-                a.putExtra(KS_DESK,kas.getDesk());
-                a.putExtra(KS_TITLE,kas.getTitle());
+                setkas kas = kaslist.get(position);
+                Intent a = new Intent(getApplicationContext(), MainUbah.class);
+                a.putExtra(KS_ID, kas.getIdkas());
+                a.putExtra(KS_NAMA, kas.getNama());
+                a.putExtra(KS_RANTING, kas.getRanting());
+                a.putExtra(KS_JUMLAH, kas.getJumlah());
+                a.putExtra(KS_DESK, kas.getDesk());
+                a.putExtra(KS_TITLE, kas.getTitle());
                 startActivity(a);
 
 
@@ -127,11 +125,15 @@ klik.setOnClickListener(new View.OnClickListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 kaslist.clear();
 
-                for(DataSnapshot setnapasopt:dataSnapshot.getChildren()){
-                    setkas kas=setnapasopt.getValue(setkas.class);
+                for (int a = 0; a < dataSnapshot.getChildrenCount(); a++) {
+
+                }
+
+                for (DataSnapshot setnapasopt : dataSnapshot.getChildren()) {
+                    setkas kas = setnapasopt.getValue(setkas.class);
                     kaslist.add(kas);
                 }
-               maruf.com.myapplication.Ranting.setter.kaslist adapter=new kaslist(MainTampil.this,kaslist);
+                maruf.com.myapplication.Ranting.setter.kaslist adapter = new kaslist(MainTampil.this, kaslist);
                 listviewkas.setAdapter(adapter);
 //                Collections.reverse(kaslist);
 //                adapter.notifyDataSetChanged();
@@ -150,17 +152,17 @@ klik.setOnClickListener(new View.OnClickListener() {
     }
 
     private void cari() {
-        String d=caari.getText().toString();
+        String d = caari.getText().toString();
         DatabaseReference query = FirebaseDatabase.getInstance().getReference().child("pemasukan");
-        query.orderByChild("desk").startAt(d).endAt(d+"\uf8ff").addValueEventListener(new ValueEventListener() {
+        query.orderByChild("desk").startAt(d).endAt(d + "\uf8ff").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 kaslist.clear();
-                for(DataSnapshot setnapasopt:dataSnapshot.getChildren()){
-                    setkas kas=setnapasopt.getValue(setkas.class);
+                for (DataSnapshot setnapasopt : dataSnapshot.getChildren()) {
+                    setkas kas = setnapasopt.getValue(setkas.class);
                     kaslist.add(kas);
                 }
-                maruf.com.myapplication.Ranting.setter.kaslist adapter=new kaslist(MainTampil.this,kaslist);
+                maruf.com.myapplication.Ranting.setter.kaslist adapter = new kaslist(MainTampil.this, kaslist);
                 listviewkas.setAdapter(adapter);
 
             }
@@ -175,10 +177,10 @@ klik.setOnClickListener(new View.OnClickListener() {
 
     public void hhome(View view) {
 
-        Intent gjf =new Intent(MainTampil.this, MenuUtama.class);
+        Intent gjf = new Intent(MainTampil.this, MenuUtama.class);
         finish();
         startActivity(gjf);
 
     }
-    }
+}
 
