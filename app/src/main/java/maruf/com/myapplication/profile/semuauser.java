@@ -21,7 +21,8 @@ import java.util.List;
 import maruf.com.myapplication.R;
 
 import maruf.com.myapplication.loginnomo.User;
-import maruf.com.myapplication.push.pushkhusus;
+import maruf.com.myapplication.push.pushdaftar;
+import maruf.com.myapplication.pushdaftar.cobapush;
 
 
 public class semuauser extends AppCompatActivity {
@@ -48,7 +49,7 @@ public class semuauser extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 User kas=htkaslist.get(position);
-                Intent a =new Intent(getApplicationContext(), pushkhusus.class);
+                Intent a =new Intent(getApplicationContext(), pushdaftar.class);
                 a.putExtra("KS",kas.getId());
                 a.putExtra("KSuser",kas.getUsername());
                 a.putExtra("KShutang",kas.getImage());

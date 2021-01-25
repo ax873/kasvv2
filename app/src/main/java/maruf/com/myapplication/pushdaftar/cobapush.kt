@@ -1,4 +1,4 @@
-package maruf.com.myapplication.push
+package maruf.com.myapplication.pushdaftar
 
 import android.content.Context
 import android.content.Intent
@@ -17,14 +17,18 @@ import maruf.com.myapplication.R
 import maruf.com.myapplication.loginnomo.bismila
 import maruf.com.myapplication.menunavigasi
 import maruf.com.myapplication.profile.semuauser
+import maruf.com.myapplication.push.FirebaseService
+import maruf.com.myapplication.push.Instance
+import maruf.com.myapplication.push.PushNotification
+import maruf.com.myapplication.push.TOPIC
 
 
-class pushkhusus : AppCompatActivity() {
-    val TAG="pushkhusus"
+class cobapush : AppCompatActivity() {
+    val TAG="cobapush"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.daftar)
-        FirebaseService.sharedPref =getSharedPreferences("sharedPref",Context.MODE_PRIVATE)
+        setContentView(R.layout.daftar1)
+        FirebaseService.sharedPref =getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
         val etTokent = findViewById<EditText>(R.id.idtoken)
         FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
             FirebaseService.token =it.token
@@ -36,45 +40,30 @@ class pushkhusus : AppCompatActivity() {
         val etmessage = findViewById<EditText>(R.id.idpesan)
 
         var intent=intent
-        
-        val messge =intent.getStringExtra("KShutang")
-        val to =intent.getStringExtra("KSuser")
 
-        val stsss =intent.getStringExtra("KSstatus")
-        val rayon =intent.getStringExtra("KSray")
-
+        val messge =intent.getStringExtra("KS")
+        val to =intent.getStringExtra("KS")
 
         val txmesage = findViewById<TextView>(R.id.ididaaaaan)
 
 
 
         simpan.setOnClickListener{
-            val title = "Pendaftaran User Baru "
-            val message =""
+
             val  receipeinToken=etTokent.text.toString()
 
 
-            if(title.isNotEmpty()&&message.isNotEmpty()){
-                PushNotification(
-                    NotificationData(title,message),
-                  //  TOPIC
-                      receipeinToken
-
-                ).also {
-                    sendnotification(it)
-
-
-                    val intent = Intent(this, semuauser::class.java)
-                   intent.apply {
-                       putExtra("mes",receipeinToken)
-                   }
-                    onBackPressed();
-                    startActivity(intent)
-                    finish()
-                }
-
+            val intent = Intent(this, bismila::class.java)
+            intent.apply {
+                putExtra("mes",receipeinToken)
             }
+            onBackPressed();
+            startActivity(intent)
+            finish()
         }
+
+
+
     }
 
     override fun onBackPressed(){
