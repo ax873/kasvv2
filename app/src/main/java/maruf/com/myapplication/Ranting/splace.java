@@ -2,15 +2,12 @@ package maruf.com.myapplication.Ranting;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import maruf.com.myapplication.R;
-import maruf.com.myapplication.menunavigasi;
 
 
 public class splace extends AppCompatActivity {

@@ -135,8 +135,7 @@ public class MainTampil extends AppCompatActivity {
                 }
                 maruf.com.myapplication.Ranting.setter.kaslist adapter = new kaslist(MainTampil.this, kaslist);
                 listviewkas.setAdapter(adapter);
-//                Collections.reverse(kaslist);
-//                adapter.notifyDataSetChanged();
+//
             }
 
             @Override

@@ -145,6 +145,7 @@ android:textColor="@color/putiih"
         android:inputType="number" />
             <EditText
           android:layout_width="170dp"
+                android:background="#F6F6F6"
           android:id="@+id/etnumber"
 android:text="Jumlah"
           android:enabled="false"

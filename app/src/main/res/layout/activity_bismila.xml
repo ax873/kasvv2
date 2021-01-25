@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".loginnomo.bismila">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/rididreg"
+        android:hint="id"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/rregnama"
+        android:hint="nik"
+        android:ems="10"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/rregpass"
+        android:hint="pass"
+        android:ems="10"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/rregimaga"
+        android:hint="hutang"
+        android:ems="10"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/rregstats"
+        android:hint="status"
+        android:ems="10"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/rregray"
+        android:hint="rayon"
+        android:ems="10"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btregregnum"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

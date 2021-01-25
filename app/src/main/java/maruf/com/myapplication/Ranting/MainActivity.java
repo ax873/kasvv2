@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tampillsaldo;
     private String Sid,findal;
     TextView title;
+
+    //dadi? uis log in kyne mas
     int hari,bulan,tahun;
     String  amonth;
     Double hasil,v1,v2;

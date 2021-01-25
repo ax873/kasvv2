@@ -14,6 +14,8 @@ import java.util.List;
 
 import maruf.com.myapplication.R;
 import maruf.com.myapplication.Ranting.setterr.setkas;
+import maruf.com.myapplication.loginnomo.User;
+import maruf.com.myapplication.profile.semuauser;
 
 
 public class kaslist extends ArrayAdapter<setkas> {
@@ -27,6 +29,8 @@ public class kaslist extends ArrayAdapter<setkas> {
         this.context=context;
         this.setlist=setlist;
     }
+
+
 
 
     @NonNull

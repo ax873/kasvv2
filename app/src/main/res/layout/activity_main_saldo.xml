@@ -49,11 +49,12 @@
         android:id="@+id/idsaldo1"
         android:inputType="number"
         android:gravity="center"
-        android:textColor="#F6F6F6"
+        android:textColor="#FFFFFF"
         android:focusable="true"
         android:digits="0123456789.,"
         android:layout_gravity="center"
         android:ems="10"
+
         android:layout_width="50dp"
         android:layout_height="50dp"
         />
@@ -61,6 +62,7 @@
         android:layout_width="170dp"
         android:id="@+id/etnumber"
         android:text="Jumlah"
+        android:background="#FFFFFF"
         android:enabled="false"
         android:layout_height="wrap_content"/>
 </LinearLayout>

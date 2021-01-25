@@ -64,7 +64,7 @@ long maxid=0;
         edid = (EditText) findViewById(R.id.txtidkas);
         ednama = (EditText) findViewById(R.id.txtnama);
         etnumber=findViewById(R.id.etnumber);
-        databasekas = FirebaseDatabase.getInstance().getReference("pemasukan");
+        databasekas = FirebaseDatabase.getInstance().getReference("Users");
 
         noo = FirebaseDatabase.getInstance().getReference("No_primary");
         noo.addValueEventListener(new ValueEventListener() {

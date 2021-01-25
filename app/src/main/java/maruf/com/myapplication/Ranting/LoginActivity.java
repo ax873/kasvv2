@@ -12,12 +12,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,12 +28,11 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 
-import maruf.com.myapplication.HomeFragmen;
 import maruf.com.myapplication.R;
 import maruf.com.myapplication.Ranting.coba.setsaldo;
-import maruf.com.myapplication.Ranting.tampilan.Mantab;
-import maruf.com.myapplication.Ranting.tampilan.Tampilhutang;
+import maruf.com.myapplication.loginnomo.bismila;
 import maruf.com.myapplication.menunavigasi;
+import maruf.com.myapplication.profile.semuauser;
 
 public class LoginActivity extends AppCompatActivity {
     EditText username,email,password;
@@ -151,7 +147,7 @@ Button btloginl;
         super.onStart();
         FirebaseUser user =firebaseAuth.getCurrentUser();
         if(user !=null){
-            startActivity(new Intent(LoginActivity.this, menunavigasi.class));
+            startActivity(new Intent(LoginActivity.this, semuauser.class));
 //
         }
     }

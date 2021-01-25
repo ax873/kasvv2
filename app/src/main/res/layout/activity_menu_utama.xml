@@ -208,8 +208,8 @@ android:text="Rayon"
 
     <Button
         android:id="@+id/btnRekap"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
@@ -238,7 +238,10 @@ android:text="Rayon"
         android:textColor="@color/putiih"
         android:layout_marginBottom="10dp"
         android:layout_height="wrap_content"/>
-
+<Button
+    android:layout_width="wrap_content"
+    android:onClick="registrasinohp"
+    android:layout_height="wrap_content"/>
 </LinearLayout>
 
     </LinearLayout>

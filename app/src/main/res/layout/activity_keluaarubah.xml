@@ -86,6 +86,7 @@ android:background="@drawable/ubh"
             <EditText
                 android:layout_width="170dp"
                 android:id="@+id/etnumber"
+                android:background="#F6F6F6"
                 android:text="Jumlah"
                 android:enabled="false"
                 android:layout_height="wrap_content"/>

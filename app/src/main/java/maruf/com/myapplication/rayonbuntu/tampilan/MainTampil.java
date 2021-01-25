@@ -162,8 +162,7 @@ klik.setOnClickListener(new View.OnClickListener() {
                 }
               kaslist adapter=new kaslist(MainTampil.this,kaslist);
                 listviewkas.setAdapter(adapter);
-//                Collections.reverse(kaslist);
-//                adapter.notifyDataSetChanged();
+
             }
 
             @Override
