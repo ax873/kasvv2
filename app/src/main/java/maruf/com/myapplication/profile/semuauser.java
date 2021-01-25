@@ -17,30 +17,33 @@ import java.util.List;
 
 import maruf.com.myapplication.R;
 
+import maruf.com.myapplication.Ranting.setter.kaslist;
+import maruf.com.myapplication.Ranting.setterr.setkas;
+import maruf.com.myapplication.Ranting.tampilan.MainTampil;
+import maruf.com.myapplication.Ranting.tampilan.Tampilhutang;
 import maruf.com.myapplication.loginnomo.User;
-import maruf.com.myapplication.rayonbuntu.setter.kaslist;
-import maruf.com.myapplication.rayonbuntu.setterr.setkas;
-import maruf.com.myapplication.rayonbuntu.tampilan.MainTampil;
 
 
 public class semuauser extends AppCompatActivity {
 
-    private ListView listviewkas;
-    List<User> kaslist;
+    private ListView listview;
+
+    private    List<User> htkaslist;
     DatabaseReference dat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_semuauser);
-        kaslist = new ArrayList<>();
-        listviewkas = findViewById(R.id.idtampilpengguna);
-        dat = FirebaseDatabase.getInstance().getReference("Users");
+        htkaslist = new ArrayList<>();
+        listview = findViewById(R.id.lisviewkas);
+        dat = FirebaseDatabase.getInstance().getReference("user");
 
 
 
 
 
     }
+
 
     @Override
     protected void onStart() {
@@ -48,17 +51,16 @@ public class semuauser extends AppCompatActivity {
         dat.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                kaslist.clear();
+                htkaslist.clear();
 
                 for(DataSnapshot setnapasopt:dataSnapshot.getChildren()){
                     User kas=setnapasopt.getValue(User.class);
-                    kaslist.add(kas);
+                    htkaslist.add(kas);
                 }
-                kastlistuser adapter=new kastlistuser(semuauser.this,kaslist);
-                listviewkas.setAdapter(adapter);
-
-
-//
+                kastlistuser adapter=new kastlistuser(semuauser.this,htkaslist);
+                listview.setAdapter(adapter);
+//                Collections.reverse(kaslist);
+//                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -66,8 +68,7 @@ public class semuauser extends AppCompatActivity {
 
             }
         });
-
-
-
     }
+
+
 }

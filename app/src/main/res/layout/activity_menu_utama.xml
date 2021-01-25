@@ -241,8 +241,14 @@ android:text="Rayon"
 <Button
     android:layout_width="wrap_content"
     android:onClick="registrasinohp"
+    android:text="registrasi nomor "
     android:layout_height="wrap_content"/>
 </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:onClick="tampilpangguna"
+                android:text="semua user"
+                android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

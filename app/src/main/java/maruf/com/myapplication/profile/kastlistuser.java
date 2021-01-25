@@ -14,35 +14,33 @@ import java.util.List;
 
 import maruf.com.myapplication.R;
 
+import maruf.com.myapplication.Ranting.setterr.setkas;
 import maruf.com.myapplication.loginnomo.User;
-
 
 public class kastlistuser extends ArrayAdapter<User> {
 
     private Activity context;
-    private List<User> setlist;
+    private List<User> selist;
 
 
-    public kastlistuser(@NonNull Activity context, List<User> setlist) {
-        super(context, R.layout.lih,setlist);
+    public kastlistuser(@NonNull Activity context, List<User> selist) {
+        super(context, R.layout.list_layout,selist);
         this.context=context;
-        this.setlist=setlist;
+        this.selist=selist;
     }
-
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
-        View Listviewitem=inflater.inflate(R.layout.lih,null,true);
+        View Listviewitem=inflater.inflate(R.layout.list_layout2,null,true);
+        TextView textnama=(TextView)Listviewitem.findViewById(R.id.tv_namaprofil);
+        TextView texyjumlah=(TextView)Listviewitem.findViewById(R.id.tv_jumlahprofil);
 
-        TextView tg=(TextView)Listviewitem.findViewById(R.id.TVHUTANG);
-        TextView tf=(TextView)Listviewitem.findViewById(R.id.TV_nama);
+        User kas=selist.get(position);
+        textnama.setText(kas.getUsername());
+        texyjumlah.setText(kas.getImage());
 
-        User kas=setlist.get(position);
-
-        tg.setText(kas.getUsername());
-        tf.setText(kas.getImage());
         return Listviewitem;
     }
 }

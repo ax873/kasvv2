@@ -44,12 +44,12 @@ val messge =intent.getStringExtra("KS")
                 simpan.setOnClickListener{
             val title = ""+messge
             val message =""+to
-                 //   val  receipeinToken=etTokent.text.toString()
+                    val  receipeinToken=etTokent.text.toString()
                     if(title.isNotEmpty()&&message.isNotEmpty()){
                         PushNotification(
                                 NotificationData(title,message),
-                               TOPIC
-                              //  receipeinToken
+                               //TOPIC
+                               receipeinToken
 
                         ).also {
                             sendnotification(it)

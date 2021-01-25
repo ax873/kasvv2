@@ -147,7 +147,7 @@ Button btloginl;
         super.onStart();
         FirebaseUser user =firebaseAuth.getCurrentUser();
         if(user !=null){
-            startActivity(new Intent(LoginActivity.this, semuauser.class));
+            startActivity(new Intent(LoginActivity.this, menunavigasi.class));
 //
         }
     }
