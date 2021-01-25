@@ -21,6 +21,8 @@
         <activity android:name=".rayonbuntu.kaslain" />
         <activity android:name=".Ranting.Profilname" />
         <activity android:name=".push.MainActivity" />
+        <activity android:name=".push.pushkhusus" />
+        <activity android:name=".push.pushdaftars" />
         <activity android:name=".Ranting.tampilan.Mantab" />
         <activity android:name=".Ranting.Bayar_Client" />
         <activity android:name=".Ranting.tokenbayar" />

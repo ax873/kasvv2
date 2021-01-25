@@ -14,64 +14,76 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import maruf.com.myapplication.R
+import maruf.com.myapplication.loginnomo.bismila
 import maruf.com.myapplication.menunavigasi
+import maruf.com.myapplication.profile.semuauser
 
 
-const val TOPIC="/topics/myTopic"
-class MainActivity : AppCompatActivity() {
-    val TAG="MainActifiy"
+class pushkhusus : AppCompatActivity() {
+    val TAG="pushkhusus"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.daftar)
         FirebaseService.sharedPref =getSharedPreferences("sharedPref",Context.MODE_PRIVATE)
         val etTokent = findViewById<EditText>(R.id.idtoken)
-FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
-    FirebaseService.token =it.token
-    etTokent.setText(it.token)
-}
+        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
+            FirebaseService.token =it.token
+            etTokent.setText(it.token)
+        }
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
         var simpan = findViewById(R.id.idsimpan) as Button
         val etTitle = findViewById<EditText>(R.id.idjudul)
         val etmessage = findViewById<EditText>(R.id.idpesan)
 
-var intent=intent
-val messge =intent.getStringExtra("KS")
-        val to =intent.getStringExtra("DES")
+        var intent=intent
+        
+        val messge =intent.getStringExtra("KShutang")
+        val to =intent.getStringExtra("KSuser")
+
+        val stsss =intent.getStringExtra("KSstatus")
+        val rayon =intent.getStringExtra("KSray")
+
+
         val txmesage = findViewById<TextView>(R.id.ididaaaaan)
 
 
 
-                simpan.setOnClickListener{
-            val title = ""+messge
-            val message =""+to
-                    val  receipeinToken=etTokent.text.toString()
-                    if(title.isNotEmpty()&&message.isNotEmpty()){
-                        PushNotification(
-                                NotificationData(title,message),
-                            TOPIC
-                             //  receipeinToken
-
-                        ).also {
-                            sendnotification(it)
+        simpan.setOnClickListener{
+            val title = "Pendaftaran User Baru "
+            val message =""
+            val  receipeinToken=etTokent.text.toString()
 
 
-                            val intent = Intent(this, menunavigasi::class.java)
-                            onBackPressed();
-startActivity(intent)
-finish()
-                        }
+            if(title.isNotEmpty()&&message.isNotEmpty()){
+                PushNotification(
+                    NotificationData(title,message),
+                  //  TOPIC
+                      receipeinToken
 
-                    }
+                ).also {
+                    sendnotification(it)
+
+
+                    val intent = Intent(this, semuauser::class.java)
+                   intent.apply {
+                       putExtra("mes",receipeinToken)
+                   }
+                    onBackPressed();
+                    startActivity(intent)
+                    finish()
+                }
+
+            }
         }
     }
 
     override fun onBackPressed(){
 
     }
-   private  fun sendnotification (notification: PushNotification)= CoroutineScope(Dispatchers.IO).launch {
+    private  fun sendnotification (notification: PushNotification)= CoroutineScope(Dispatchers.IO).launch {
         try {
 
-val response = Instance.api.postnotification(notification)
+            val response = Instance.api.postnotification(notification)
             if(response.isSuccessful){
                 Log.d(TAG, "Response: ${Gson().toJson(response)} ")
 

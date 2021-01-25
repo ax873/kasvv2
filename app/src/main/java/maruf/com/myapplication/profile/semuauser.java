@@ -3,7 +3,10 @@ package maruf.com.myapplication.profile;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -17,17 +20,19 @@ import java.util.List;
 
 import maruf.com.myapplication.R;
 
-import maruf.com.myapplication.Ranting.setter.kaslist;
-import maruf.com.myapplication.Ranting.setterr.setkas;
-import maruf.com.myapplication.Ranting.tampilan.MainTampil;
-import maruf.com.myapplication.Ranting.tampilan.Tampilhutang;
 import maruf.com.myapplication.loginnomo.User;
+import maruf.com.myapplication.push.pushkhusus;
 
 
 public class semuauser extends AppCompatActivity {
 
     private ListView listview;
-
+    public  static  final String KS_AMA="nama";
+    public  static  final String KS_D="id";
+    public  static  final String KS_ANTING="ranting";
+    public  static  final String KS_UMLAH="jumlah";
+    public  static  final String KS_ESK="desk";
+    public  static  final String KS_ITLE="title";
     private    List<User> htkaslist;
     DatabaseReference dat;
     @Override
@@ -38,7 +43,22 @@ public class semuauser extends AppCompatActivity {
         listview = findViewById(R.id.lisviewkas);
         dat = FirebaseDatabase.getInstance().getReference("user");
 
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                User kas=htkaslist.get(position);
+                Intent a =new Intent(getApplicationContext(), pushkhusus.class);
+                a.putExtra("KS",kas.getId());
+                a.putExtra("KSuser",kas.getUsername());
+                a.putExtra("KShutang",kas.getImage());
+                a.putExtra("KSstatus",kas.getStatus());
+                a.putExtra("KSray",kas.getRayon());
+                startActivity(a);
+
+
+            }
+        });
 
 
 

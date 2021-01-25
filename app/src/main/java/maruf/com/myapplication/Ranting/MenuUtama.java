@@ -26,9 +26,11 @@ import maruf.com.myapplication.R;
 import maruf.com.myapplication.Ranting.Rekapitulasi.RekapReportActivity;
 import maruf.com.myapplication.Ranting.tampilan.MainTampil;
 import maruf.com.myapplication.Ranting.tampilan.Tampilhutang;
-import maruf.com.myapplication.loginnomo.bismila;
 import maruf.com.myapplication.obrolan.obrolan;
 import maruf.com.myapplication.profile.semuauser;
+
+import maruf.com.myapplication.push.pushkhusus;
+
 import maruf.com.myapplication.rayonbuntu.kaslain;
 
 
@@ -278,7 +280,7 @@ public class MenuUtama extends AppCompatActivity {
     }
 
     public void registrasinohp(View view) {
-        Intent gsf = new Intent(MenuUtama.this, bismila.class);
+        Intent gsf = new Intent(MenuUtama.this, pushkhusus.class);
         startActivity(gsf);
     }
 
