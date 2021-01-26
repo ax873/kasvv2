@@ -14,7 +14,8 @@
         android:roundIcon="@drawable/icom"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".loginnomo.bismila"></activity>
+        <activity android:name=".tampilhutang.hutangtampil"></activity>
+        <activity android:name=".loginnomo.bismila" />
         <activity android:name=".profile.semuauser" />
         <activity android:name=".Ranting.Rekapitulasi.RekapPreviewActivity" />
         <activity android:name=".Ranting.Rekapitulasi.RekapReportActivity" />
