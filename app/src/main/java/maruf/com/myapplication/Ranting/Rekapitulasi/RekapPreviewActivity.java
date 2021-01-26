@@ -1,5 +1,6 @@
 package maruf.com.myapplication.Ranting.Rekapitulasi;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,6 +13,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -79,7 +82,7 @@ public class RekapPreviewActivity extends AppCompatActivity {
         document.finishPage(page);
 
         // write the document content
-        String directory_path = Environment.getExternalStorageDirectory().getPath() + "/mypdf/";
+        String directory_path = Environment.getExternalStorageDirectory().getPath() + "/RANTING/";
         File file = new File(directory_path);
         if (!file.exists()) {
             file.mkdirs();
@@ -96,5 +99,23 @@ public class RekapPreviewActivity extends AppCompatActivity {
 
         // close the document
         document.close();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_preview, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.item_save){
+            createDFFile(textReport);
+        }
+
+        return true;
     }
 }

@@ -1,11 +1,15 @@
 package maruf.com.myapplication.Ranting.Rekapitulasi;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,20 +17,32 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import maruf.com.myapplication.R;
+import maruf.com.myapplication.Ranting.setterr.setkas;
 
 public class RekapReportActivity extends AppCompatActivity {
 
     private Button btnExport;
     private EditText txtNotes;
     private Spinner spnBulan, spnTahun;
+    private String strPemasukan;
 
     private static String[] arrayBulan = new String[]{
             "Pilih Bulan",
@@ -92,19 +108,19 @@ public class RekapReportActivity extends AppCompatActivity {
         btnExport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (spnBulan.getSelectedItemPosition()==0){
+                if (spnBulan.getSelectedItemPosition() == 0) {
                     Toast.makeText(RekapReportActivity.this, "Pilih bulannya dulu", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (spnTahun.getSelectedItemPosition()==0){
+                if (spnTahun.getSelectedItemPosition() == 0) {
                     Toast.makeText(RekapReportActivity.this, "Pilih tahunnya dulu", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (txtNotes.getText().toString().equals("")){
+                if (txtNotes.getText().toString().equals("")) {
                     txtNotes.setError("Harus terisi");
                     return;
                 }
-                setPreview();
+                strPemasukan = buatText();
             }
         });
     }
@@ -114,30 +130,100 @@ public class RekapReportActivity extends AppCompatActivity {
         return df.format(Calendar.getInstance().getTime());
     }
 
-    private String buatText(){
+    double pemasukan = 0;
+
+
+
+    private StringBuilder textHeader(){
         StringBuilder string = new StringBuilder();
         string.append("=====================================\n");
         string.append("LAPORAN KAS\n");
         string.append("=====================================\n");
         string.append("Rekap ").append(arrayBulan[spnBulan.getSelectedItemPosition()]).append(" ").append(arrayTahun[spnTahun.getSelectedItemPosition()]).append("\n");
         string.append("=====================================\n\n");
+        return string;
+    }
 
-        string.append("Pemasukan\n");
+    private StringBuilder textFooter(){
+        StringBuilder string = new StringBuilder();
         string.append("-------------------------------------\n");
-        // Isian pemasukan
-        string.append("- 01/01/2020 ").append("         ").append("Rp.10.000").append("\n");
-        string.append("- 02/01/2020 ").append("         ").append("Rp.20.000").append("\n");
-        string.append("- 03/01/2020 ").append("         ").append("Rp.30.000").append("\n");
-        string.append("- 04/01/2020 ").append("         ").append("Rp.40.000").append("\n");
-        string.append("\n");
+        string.append("Direkap pada ").append(timestamp()).append("\n");
+        string.append(txtNotes.getText().toString()).append("\n");
+        string.append("-------------------------------------\n");
+        string.append("TERIMAKASIH\n");
+        string.append("=====================================\n");
+        string.append("=====================================");
+        return string;
+    }
+
+    private String buatText(){
+        StringBuilder sb = new StringBuilder();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("pemasukan");
+        ref.addValueEventListener(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                sb.append(textHeader());
+                sb.append("Pemasukan\n");
+                sb.append("-------------------------------------\n");
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    setkas sk = postSnapshot.getValue(setkas.class);
+
+                    String[] dateStr = sk.getRanting().split("-");
+                    if (spnBulan.getSelectedItemPosition()==Integer.parseInt(dateStr[1]) && Integer.parseInt(arrayTahun[spnTahun.getSelectedItemPosition()])==Integer.parseInt(dateStr[2])){
+                        pemasukan += Double.parseDouble(sk.getJumlah());
+
+                        sb.append("- ").append(sk.getRanting()).append("\t\t\t\t\t\t\t").append(formatrupiah(Double.parseDouble(sk.getJumlah()))).append("\n");
+                    }
+                    sb.append("\n");
+
+                    /*
+                     *
+                     * TAMBAHKAN retrieve data pengeluaran disini
+                     * Kreasikan sendiri
+                     *
+                     **/
+
+                }
+
+                sb.append("Total\n");
+                sb.append("-------------------------------------\n");
+                sb.append("- Pemasukan   : ").append("\t\t\t").append(formatrupiah(pemasukan)).append("\n");
+
+                sb.append(textFooter());
+                Intent intent = new Intent(RekapReportActivity.this, RekapPreviewActivity.class);
+                intent.putExtra("report", sb.toString());
+                startActivity(intent);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("dbPemasukan", error.toString());
+            }
+        });
+
+        return sb.toString();
+    }
+
+    private String formatrupiah(Double number){
+        Locale localeID=new Locale("IDN","ID");
+        NumberFormat numberFormat=NumberFormat.getCurrencyInstance(localeID);
+        String formatrupiah=numberFormat.format(number);
+        String[] split = formatrupiah.split(",");
+        int length=split[0].length();
+        return split[0].substring(0,2)+". "+split[0].substring(2,length);
+    }
+
+    /**
+    private String buatText() {
+        Log.i("listPemasukan", strPemasukan);
+        string.append(strPemasukan);
+
 
         string.append("Pemasukan\n");
         string.append("-------------------------------------\n");
         // Isian pengeluaran
-        string.append("- 05/01/2020 ").append("         ").append("Rp.10.000").append("\n");
-        string.append("- 06/01/2020 ").append("         ").append("Rp.20.000").append("\n");
-        string.append("- 07/01/2020 ").append("         ").append("Rp.30.000").append("\n");
-        string.append("- 08/01/2020 ").append("         ").append("Rp.40.000").append("\n");
+        string.append("- ").append("         ").append("\n");
         string.append("\n");
 
         string.append("Total\n");
@@ -146,20 +232,9 @@ public class RekapReportActivity extends AppCompatActivity {
         string.append("- Pengeluaran  : ").append("      ").append("Rp.100.000").append("\n");
         string.append("\n");
 
-        string.append("-------------------------------------\n");
-        string.append("Direkap pada ").append(timestamp()).append("\n");
-        string.append(txtNotes.getText().toString()).append("\n");
-        string.append("-------------------------------------\n");
-        string.append("TERIMAKASIH\n");
-        string.append("=====================================\n");
-        string.append("=====================================");
+
         return string.toString();
     }
-
-    private void setPreview(){
-        Intent intent = new Intent(this, RekapPreviewActivity.class);
-        intent.putExtra("report", buatText());
-        startActivity(intent);
-    }
+**/
 
 }
