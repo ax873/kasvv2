@@ -27,7 +27,7 @@ android:background="@drawable/untu"
     <EditText
         android:layout_width="match_parent"
         android:id="@+id/idtoken"
-
+android:visibility="invisible"
         android:hint="token"
         android:layout_height="wrap_content"/>
     <Button

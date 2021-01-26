@@ -59,7 +59,19 @@ android:background="@drawable/icom"
             android:textColor="@color/putiih"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="327dp" />
+<Button
+   android:text="Konfirmasi"
+   android:id="@+id/idhutkonfir"
+    android:layout_width="90dp"
+    android:background="@drawable/btsn"
+    android:layout_height="50dp"
 
+    android:enabled="false"
+    android:layout_marginLeft="20dp"
+    android:textSize="7dp"
+    android:textColor="@color/putiih"
+    tools:layout_editor_absoluteX="85dp"
+    tools:layout_editor_absoluteY="327dp"/>
         <Button
             android:text="Set Saldo Kas Rayon"
             android:id="@+id/idth"
@@ -201,9 +213,9 @@ android:layout_marginTop="10dp"
       />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
-
         android:textAlignment="center"
         android:id="@+id/stastus"
         android:layout_height="wrap_content"/>

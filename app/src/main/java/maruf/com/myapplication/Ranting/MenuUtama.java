@@ -32,6 +32,7 @@ import maruf.com.myapplication.profile.semuauser;
 
 import maruf.com.myapplication.pushdaftar.cobapush;
 import maruf.com.myapplication.rayonbuntu.kaslain;
+import maruf.com.myapplication.tampilhutang.hutangtampil;
 
 
 public class MenuUtama extends AppCompatActivity {
@@ -286,6 +287,12 @@ public class MenuUtama extends AppCompatActivity {
 
     public void tampilpangguna(View view) {
         Intent gsf = new Intent(MenuUtama.this, semuauser.class);
+        startActivity(gsf);
+    }
+
+    public void hutangadmin(View view) {
+        Intent gsf = new Intent(MenuUtama.this, hutangtampil.class);
+
         startActivity(gsf);
     }
 }

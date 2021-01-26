@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:text="SALDO KAS SEBESAR"
         android:paddingBottom="10dp"
+        android:id="@+id/idhutrevisi"
         android:textAlignment="center"/>
     <TextView
 

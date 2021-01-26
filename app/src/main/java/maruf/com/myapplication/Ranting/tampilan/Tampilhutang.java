@@ -38,6 +38,9 @@ public class Tampilhutang extends AppCompatActivity {
     public  static  final String KS_ESK="desk";
     public  static  final String KS_ITLE="title";
    private EditText caari;
+
+
+
     List<setkas> kaslist;
    private TextView httxtapayah;
   private DatabaseReference htdatabasw1;
@@ -53,6 +56,7 @@ public class Tampilhutang extends AppCompatActivity {
         htkaslist = new ArrayList<>();
         htlistviewkas = (ListView) findViewById(R.id.htlisviewkas);
         httxtapayah=(TextView) findViewById(R.id.htidapayah);
+
 
         htdatabasw1.addValueEventListener(new ValueEventListener() {
             @Override

@@ -40,14 +40,16 @@ import maruf.com.myapplication.rayonbuntu.MainActivity;
 import maruf.com.myapplication.rayonbuntu.MainSaldo;
 import maruf.com.myapplication.rayonbuntu.kaslain;
 import maruf.com.myapplication.rayonbuntu.tampilan.MainTampil;
+import maruf.com.myapplication.tampilhutang.hutangtampil;
 
 public class HomeFragmen extends Fragment {
     public  static  final String KS_S="NAMA";
     DatabaseReference database,asd,db;
     String uid;
+    String rays;
     StorageReference fileref;
     CircleImageView gambar;
-Button kasranting,hutang,kasrayonlain,bayarhutang,rayonkita,th,keluar,masuk,rayonini,logot;
+Button kasranting,hutang,kasrayonlain,bayarhutang,rayonkita,th,keluar,masuk,rayonini,logot,huttang;
 TextView txapayah,tnjuk,tampilhutang,bnma,ma,status;
     @Nullable
     @Override
@@ -56,6 +58,7 @@ TextView txapayah,tnjuk,tampilhutang,bnma,ma,status;
          uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         db= FirebaseDatabase.getInstance().getReference("Users").child(uid);
         database= FirebaseDatabase.getInstance().getReference("message").child("ms");
+        huttang=(Button) root.findViewById(R.id.idhutkonfir);
          kasranting = (Button) root.findViewById(R.id.idkasranting);
         gambar = (CircleImageView) root.findViewById(R.id.idgambar);
         status = (TextView) root.findViewById(R.id.stastus);
@@ -68,6 +71,18 @@ TextView txapayah,tnjuk,tampilhutang,bnma,ma,status;
         txapayah = (TextView) root.findViewById(R.id.txpayah);
         tnjuk = (TextView) root.findViewById(R.id.txttampil);
         bnma = (TextView) root.findViewById(R.id.idupa);
+
+
+huttang.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+      String n=status.getText().toString();
+        Intent a =new Intent(getActivity(), hutangtampil.class);
+        a.putExtra(KS_S,rays);
+        startActivity(a);
+    }
+});
+
 
         ma = (TextView) root.findViewById(R.id.idr);
         masuk = (Button) root.findViewById(R.id.idmsukrayon);
@@ -121,7 +136,6 @@ TextView txapayah,tnjuk,tampilhutang,bnma,ma,status;
                 Intent a=new Intent(getActivity(), Main2Activity.class);
                 String nua=ma.getText().toString();
                 a.putExtra(KS_S,nua);
-
                 startActivity(a);
 
 
@@ -173,7 +187,7 @@ TextView txapayah,tnjuk,tampilhutang,bnma,ma,status;
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String rays = snapshot.child("rayon").getValue(String.class);
+                 rays = snapshot.child("rayon").getValue(String.class);
                 String ad = snapshot.child("username").getValue(String.class);
 
                 ma.setText(rays);
@@ -273,11 +287,14 @@ bayarhutang.setOnClickListener(new View.OnClickListener() {
               if (s.equals("Anggota")){
                   rayonini.setEnabled(true);
                   kasranting.setEnabled(true);
+
+                  huttang.setEnabled(false);
                   kasrayonlain.setEnabled(true);
                   bayarhutang.setEnabled(true);
               }
                 if (s.equals("Admin Rayon")){
                     rayonini.setEnabled(true);
+                    huttang.setEnabled(true);
                     kasranting.setEnabled(true);
                     kasrayonlain.setEnabled(true);
                     bayarhutang.setEnabled(true);
@@ -287,6 +304,7 @@ bayarhutang.setOnClickListener(new View.OnClickListener() {
                 }
                 if (s.equals("Admin Ranting")){
                     rayonini.setEnabled(true);
+                    huttang.setEnabled(false);
                     kasranting.setEnabled(true);
                     kasrayonlain.setEnabled(true);
                     bayarhutang.setEnabled(true);

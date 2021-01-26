@@ -30,6 +30,7 @@ import java.util.Locale;
 
 import maruf.com.myapplication.R;
 import maruf.com.myapplication.Ranting.coba.setsaldo;
+import maruf.com.myapplication.loginnomo.MainActivity;
 import maruf.com.myapplication.loginnomo.bismila;
 import maruf.com.myapplication.menunavigasi;
 import maruf.com.myapplication.profile.semuauser;
@@ -150,5 +151,11 @@ Button btloginl;
             startActivity(new Intent(LoginActivity.this, menunavigasi.class));
 //
         }
+    }
+
+    public void nim(View view) {
+
+        Intent g =new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(g);
     }
 }

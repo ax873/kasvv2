@@ -3,6 +3,7 @@ package maruf.com.myapplication.loginnomo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.concurrent.TimeUnit;
 
 import maruf.com.myapplication.R;
+import maruf.com.myapplication.Ranting.LoginActivity;
+import maruf.com.myapplication.Ranting.MenuUtama;
+import maruf.com.myapplication.Ranting.tampilan.Mantab;
+import maruf.com.myapplication.menunavigasi;
+import maruf.com.myapplication.rayonbuntu.tampilan.MainTampil;
+import maruf.com.myapplication.tampil;
 
 public class MainActivity extends AppCompatActivity {
 EditText user,pass;
@@ -43,7 +50,7 @@ FirebaseAuth mauth;
         setContentView(R.layout.activity_main3);
         user = findViewById(R.id.iduss);
         databse=FirebaseDatabase.getInstance();
-        users=databse.getReference("Users");
+        users=databse.getReference("user");
         pass = findViewById(R.id.idpassss);
         mauth = FirebaseAuth.getInstance();
 sign=findViewById(R.id.buttonsign);
@@ -69,7 +76,8 @@ sign.setOnClickListener(new View.OnClickListener() {
 User login=snapshot.child(username).getValue(User.class);
 
 if(login.getPass().equals(password)){
-    Toast.makeText(getApplicationContext(),"login succes",Toast.LENGTH_LONG).show();
+    Intent intent =new Intent(MainActivity.this, tampil.class);
+    startActivity(intent);
 }else{
     Toast.makeText(getApplicationContext(),"login ",Toast.LENGTH_LONG).show();
 
