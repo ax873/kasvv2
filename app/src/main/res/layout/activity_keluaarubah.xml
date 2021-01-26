@@ -70,18 +70,17 @@ android:background="@drawable/ubh"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_height="wrap_content">
     <EditText
         android:id="@+id/txtjumlah1"
         android:inputType="number"
         android:gravity="center"
-        android:textColor="#F6F6F6"
         android:focusable="true"
         android:digits="0123456789.,"
         android:layout_gravity="center"
         android:ems="10"
-        android:layout_width="50dp"
+        android:layout_width="220dp"
         android:layout_height="50dp" />
             <EditText
                 android:layout_width="170dp"

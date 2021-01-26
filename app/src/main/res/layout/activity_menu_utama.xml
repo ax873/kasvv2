@@ -220,7 +220,7 @@ android:text="Rayon"
         android:layout_weight="1"
         android:background="@drawable/btn"
         android:onClick="obro"
-        android:text="Rekapitulasi"
+        android:text="Rekap"
         android:textAlignment="center"
         android:textColor="@color/putiih"
         android:textSize="12dp" />
@@ -238,22 +238,28 @@ android:text="Rayon"
         android:textColor="@color/putiih"
         android:layout_marginBottom="10dp"
         android:layout_height="wrap_content"/>
-<Button
-    android:layout_width="wrap_content"
-    android:onClick="registrasinohp"
-    android:text="registrasi nomor "
-    android:layout_height="wrap_content"/>
-</LinearLayout>
-            <Button
-                android:layout_width="wrap_content"
-                android:onClick="tampilpangguna"
-                android:text="semua user"
-                android:layout_height="wrap_content"/>
+    <Button
 
-            <Button
-                android:layout_width="wrap_content"
-                android:onClick="hutangadmin"
-                android:layout_height="wrap_content"/>
+        android:onClick="tampilpangguna"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn"
+
+        android:text="Pengingat"
+        android:textAlignment="center"
+        android:textColor="@color/putiih"
+        android:textSize="12dp" />
+</LinearLayout>
+
+
 
     </LinearLayout>
 

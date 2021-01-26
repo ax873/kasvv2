@@ -34,6 +34,7 @@ import maruf.com.myapplication.loginnomo.MainActivity;
 import maruf.com.myapplication.loginnomo.bismila;
 import maruf.com.myapplication.menunavigasi;
 import maruf.com.myapplication.profile.semuauser;
+import maruf.com.myapplication.pushdaftar.cobapush;
 
 public class LoginActivity extends AppCompatActivity {
     EditText username,email,password;
@@ -156,6 +157,11 @@ Button btloginl;
     public void nim(View view) {
 
         Intent g =new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(g);
+    }
+
+    public void daftar(View view) {
+        Intent g =new Intent(LoginActivity.this, cobapush.class);
         startActivity(g);
     }
 }

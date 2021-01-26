@@ -44,14 +44,14 @@ class pushdaftar : AppCompatActivity() {
         val rayon =intent.getStringExtra("KSray")
 
 
-        val txmesage = findViewById<TextView>(R.id.ididaaaaan)
+        val txmesage = intent.getStringExtra("KS");
 
 
 
         simpan.setOnClickListener{
             val title = "Perhatian "+to
-            val message ="Hutang anda "+messge+" SEGERA LUNASI.  Status"+stsss+"  Rayon "+rayon
-            val  receipeinToken=etTokent.text.toString()
+            val message ="Hutang anda "+messge+" SEGERA LUNASI.  Status "+stsss+"  Rayon "+rayon
+            val  receipeinToken=""+txmesage
 
 
             if(title.isNotEmpty()&&message.isNotEmpty()){

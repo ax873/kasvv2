@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-android:background="@drawable/untu"
+
     tools:context=".push.MainActivity">
 
     <TextView
@@ -31,11 +31,11 @@ android:visibility="invisible"
         android:hint="token"
         android:layout_height="wrap_content"/>
     <Button
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:id="@+id/idsimpan"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="Selesai"
+        android:text="Pendaftaran Anggota Baru"
         android:textColor="@color/putiih"
         android:layout_height="50dp"/>
 

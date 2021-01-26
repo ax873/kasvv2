@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import maruf.com.myapplication.R;
+import maruf.com.myapplication.Ranting.LoginActivity;
 
 public class bismila extends AppCompatActivity {
     EditText id,nhutang,npass,nrayon,nstatus,nusername;
@@ -24,7 +26,7 @@ public class bismila extends AppCompatActivity {
         setContentView(R.layout.activity_bismila);
 id=findViewById(R.id.rididreg);
         nhutang=findViewById(R.id.rregimaga);
-        databas = FirebaseDatabase.getInstance().getReference("user");
+        databas = FirebaseDatabase.getInstance().getReference("Users");
         nstatus=findViewById(R.id.rregstats);
         nrayon=findViewById(R.id.rregray);
         npass=findViewById(R.id.rregpass);
@@ -62,8 +64,10 @@ id=findViewById(R.id.rididreg);
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-
-
+                        Toast.makeText(getApplicationContext(),"PENDAFTARAN BERHASIL",Toast.LENGTH_LONG).show();
+Intent a =new Intent(bismila.this, LoginActivity.class);
+startActivity(a);
+onBackPressed();
                     }
                 });
 

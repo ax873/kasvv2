@@ -42,7 +42,7 @@ public class semuauser extends AppCompatActivity {
         setContentView(R.layout.activity_semuauser);
         htkaslist = new ArrayList<>();
         listview = findViewById(R.id.lisviewkas);
-        dat = FirebaseDatabase.getInstance().getReference("user");
+        dat = FirebaseDatabase.getInstance().getReference("Users");
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

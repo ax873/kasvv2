@@ -140,21 +140,29 @@ android:layout_gravity="center"
     android:layout_height="wrap_content">
     <Button
         android:id="@+id/btlogin"
-        android:layout_width="120dp"
+
         android:layout_height="wrap_content"
-        android:background="@drawable/btn"
         android:text="Masuk"
+        android:layout_width="320dp"
         android:layout_marginTop="10dp"
         android:textColor="#FFFF"
         android:textStyle="bold" />
 
 
 </LinearLayout>
+    <Button
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Daftar Disini"
+ android:onClick="daftar"
+        android:textColor="@color/putiih" />
 
     <TextView
         android:layout_width="wrap_content"
         android:id="@+id/txpayah"
         android:layout_height="wrap_content"/>
+
 
 
 </LinearLayout>

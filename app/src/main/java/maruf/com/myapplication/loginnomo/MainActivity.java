@@ -32,7 +32,9 @@ import java.util.concurrent.TimeUnit;
 import maruf.com.myapplication.R;
 import maruf.com.myapplication.Ranting.LoginActivity;
 import maruf.com.myapplication.Ranting.MenuUtama;
+import maruf.com.myapplication.Ranting.hutang;
 import maruf.com.myapplication.Ranting.tampilan.Mantab;
+import maruf.com.myapplication.cabangrincian;
 import maruf.com.myapplication.menunavigasi;
 import maruf.com.myapplication.rayonbuntu.tampilan.MainTampil;
 import maruf.com.myapplication.tampil;
@@ -50,7 +52,7 @@ FirebaseAuth mauth;
         setContentView(R.layout.activity_main3);
         user = findViewById(R.id.iduss);
         databse=FirebaseDatabase.getInstance();
-        users=databse.getReference("user");
+        users=databse.getReference("Users");
         pass = findViewById(R.id.idpassss);
         mauth = FirebaseAuth.getInstance();
 sign=findViewById(R.id.buttonsign);
@@ -76,7 +78,7 @@ sign.setOnClickListener(new View.OnClickListener() {
 User login=snapshot.child(username).getValue(User.class);
 
 if(login.getPass().equals(password)){
-    Intent intent =new Intent(MainActivity.this, tampil.class);
+    Intent intent =new Intent(MainActivity.this, cabangrincian.class);
     startActivity(intent);
 }else{
     Toast.makeText(getApplicationContext(),"login ",Toast.LENGTH_LONG).show();
