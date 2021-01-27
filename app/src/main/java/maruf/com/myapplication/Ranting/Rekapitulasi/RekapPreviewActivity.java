@@ -28,7 +28,9 @@ import maruf.com.myapplication.R;
 public class RekapPreviewActivity extends AppCompatActivity {
 
     private TextView tvPreview;
+    private TextView tvPreview2;
     private String textReport;
+    private String textReport2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,11 @@ public class RekapPreviewActivity extends AppCompatActivity {
         });
 
         tvPreview = findViewById(R.id.tvPreview);
+        tvPreview = findViewById(R.id.tvPreview);
         textReport = getIntent().getExtras().getString("report");
+        textReport2 = getIntent().getExtras().getString("report");
         tvPreview.setText(textReport);
+        tvPreview2.setText(textReport2);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

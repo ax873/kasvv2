@@ -160,8 +160,5 @@ Button btloginl;
         startActivity(g);
     }
 
-    public void daftar(View view) {
-        Intent g =new Intent(LoginActivity.this, cobapush.class);
-        startActivity(g);
-    }
+
 }

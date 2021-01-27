@@ -3,8 +3,6 @@ package maruf.com.myapplication.Ranting;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -28,33 +26,40 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import maruf.com.myapplication.push.MainActivity;
+
 import maruf.com.myapplication.R;
 import maruf.com.myapplication.Ranting.coba.setsaldo;
 import maruf.com.myapplication.Ranting.tampilan.MainTampil;
 import maruf.com.myapplication.noprimary;
+import maruf.com.myapplication.push.MainActivity;
 
 public class Main2Activity extends AppCompatActivity {
     DatabaseReference databasekas;
+    //pengeluaran
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
     private Button btDatePicker;
-    EditText edid,ednama,edranting,edjumlah,eddesk,etnumber;
-
+    EditText edid;
+    EditText ednama;
     private String KS="NAMA";
-
-DatabaseReference muncul;
-    TextView isisaldo,tampillsaldo,title,idcurenc;
-
+    EditText edranting;
+    EditText edjumlah;
+    EditText eddesk;
+    DatabaseReference muncul;
+    TextView isisaldo;
+    TextView tampillsaldo;
     private String Sid;
-
-    int hari,bulan,tahun,ang1, ang2, hasl;
-    String  amonth,findal;
-
+    TextView title;
+    int hari,bulan,tahun;
+    String  amonth;
+    Double hasil, v1, v2;
+    int ang1, ang2, hasl;
+    Button EDsIMPAN1;
+    TextView idcurenc;
     DatabaseReference databasw1,noo;
     private String nua;
     private String KEYTITLE = "NAMA";
-long maxid=0;
+    long maxid=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,8 +68,7 @@ long maxid=0;
         tampillsaldo = (TextView) findViewById(R.id.idtampilsaldo);
         edid = (EditText) findViewById(R.id.txtidkas);
         ednama = (EditText) findViewById(R.id.txtnama);
-        etnumber=findViewById(R.id.etnumber);
-        databasekas = FirebaseDatabase.getInstance().getReference("Users");
+        databasekas = FirebaseDatabase.getInstance().getReference("pengeluaran");
 
         noo = FirebaseDatabase.getInstance().getReference("No_primary");
         noo.addValueEventListener(new ValueEventListener() {
@@ -84,9 +88,6 @@ long maxid=0;
 
 
 
-
-
-
         edranting = (EditText) findViewById(R.id.txtranting);
         edjumlah = (EditText) findViewById(R.id.txtjumlah);
         eddesk = (EditText) findViewById(R.id.txtdesk);
@@ -97,62 +98,6 @@ long maxid=0;
         title = findViewById(R.id.txttitle);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         databasw1 = database.getReference("message").child("ms");
-
-        etnumber.addTextChangedListener(new TextWatcher() {
-            private  String seteditext=etnumber.getText().toString().trim();
-            //private  String settexview;
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!s.toString().equals(seteditext)){
-                    etnumber.removeTextChangedListener(this);
-                    String replace=s.toString().replaceAll("[Rp. ]","");
-                    if(!replace.isEmpty()){
-                        seteditext=formatrupiah(Double.parseDouble(replace));
-                        // settexview=seteditext;
-                    }else{
-                        seteditext="";
-                        // settexview="hasil input";
-
-                    }
-                    etnumber.setText(seteditext);
-                    //  tvNumber.setText(settexview);
-                    etnumber.setSelection(seteditext.length());
-                    etnumber.addTextChangedListener(this);
-
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-        edjumlah.addTextChangedListener(new TextWatcher() {
-            private  String ditext=edjumlah.getText().toString().trim();
-            private  String sexview;
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                etnumber.setText(edjumlah.getText().toString());
-
-            }
-        });
-
 
         Calendar calendar=Calendar.getInstance();
         hari=calendar.get(Calendar.DAY_OF_MONTH);
@@ -183,21 +128,15 @@ long maxid=0;
         else if(bln.equals("11")){
             amonth= "12";
         }
-        else if(bln.equals("0")){
-            amonth= "1";
+        else if(bln.equals("12")){
+            amonth= "01";
         }
         else{
             Toast.makeText(getApplicationContext(),"Tanggal salah",Toast.LENGTH_LONG).show();
         }
 
-        if(hari<10){
-            findal= "0"+hari+"-"+amonth+"-"+tahun;
-        }  if(hari==1){
-            findal= "0"+hari+"-"+amonth+"-"+tahun;
-        }
-        else{
-            findal= ""+hari+"-"+amonth+"-"+tahun;
-        }
+
+        String findal= "0"+hari+"-"+amonth+"-"+tahun;
 
         edranting.setText(findal);
 
@@ -212,6 +151,8 @@ long maxid=0;
 
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+
 
         muncul = FirebaseDatabase.getInstance().getReference("Users").child(uid);
         muncul.addValueEventListener(new ValueEventListener() {
@@ -274,28 +215,28 @@ long maxid=0;
 
 
                     convert();
-                String tit = title.getText().toString().trim();
-                String idd = edid.getText().toString().trim();
-                String nama = ednama.getText().toString().trim();
-                String ranting = edranting.getText().toString().trim();
+                    String tit = title.getText().toString().trim();
+                    String idd = edid.getText().toString().trim();
+                    String nama = ednama.getText().toString().trim();
+                    String ranting = edranting.getText().toString().trim();
                     simpado(new noprimary(idd.toLowerCase()));
-                String desk = eddesk.getText().toString().trim();
-                String idduuu = tampillsaldo.getText().toString().trim();
-                simpansaldo(new setsaldo(idduuu.toLowerCase()));
-                submitutuser(new setkas(
+                    String desk = eddesk.getText().toString().trim();
+                    String idduuu = tampillsaldo.getText().toString().trim();
+                    simpansaldo(new setsaldo(idduuu.toLowerCase()));
+                    submitutuser(new setkas(
 
-                        idd.toLowerCase(),
-                        nama.toLowerCase(),
-                        ranting.toLowerCase(),
-                        jumlah.toLowerCase(),
-                        desk.toLowerCase(),
-                        tit.toLowerCase()));
-                Intent a=new Intent(Main2Activity.this, MainActivity.class);
+                            idd.toLowerCase(),
+                            nama.toLowerCase(),
+                            ranting.toLowerCase(),
+                            jumlah.toLowerCase(),
+                            desk.toLowerCase(),
+                            tit.toLowerCase()));
+                    Intent a=new Intent(Main2Activity.this, MainActivity.class);
 
-                a.putExtra("KS",tit+" Kas Ranting");
+                    a.putExtra("KS",tit+" Kas Ranting");
                     a.putExtra("DES","Jumlah "+jumlah+" untuk "+desk);
 
-                startActivity(a);}
+                    startActivity(a);}
             }
 
         });
@@ -344,7 +285,6 @@ long maxid=0;
         tampillsaldo.setText("" + hasl);
     }
 
-
     private void submitutuser(setkas setkas) {
         String chid = edid.getText().toString().trim();
         databasekas
@@ -384,17 +324,6 @@ long maxid=0;
 
         Intent a = new Intent(Main2Activity.this, MainTampil.class);
         startActivity(a);
-    }
-
-
-
-    private String formatrupiah(Double number){
-        Locale localeID=new Locale("IDN","ID");
-        NumberFormat numberFormat=NumberFormat.getCurrencyInstance(localeID);
-        String formatrupiah=numberFormat.format(number);
-        String[] split = formatrupiah.split(",");
-        int length=split[0].length();
-        return split[0].substring(0,2)+". "+split[0].substring(2,length);
     }
 
 }

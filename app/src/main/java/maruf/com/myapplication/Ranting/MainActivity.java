@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         Button bthapus = (Button) findViewById(R.id.bthapus);
         Sid=getIntent().getStringExtra("id");
         idcurenc=(TextView)findViewById(R.id.idcurency);
-title=findViewById(R.id.txttitle);
+        title=findViewById(R.id.txttitle);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         databasw1 = database.getReference("message").child("ms");
 

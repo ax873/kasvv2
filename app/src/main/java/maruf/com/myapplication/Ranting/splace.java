@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import maruf.com.myapplication.R;
+import maruf.com.myapplication.cabangrincian;
 
 
 public class splace extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class splace extends AppCompatActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                Intent a = new Intent(splace.this, LoginActivity.class);
+                Intent a = new Intent(splace.this, cabangrincian.class);
                 splace.this.finish();
                 startActivity(a); // menghubungkan activity splashscren ke main activity dengan intent
 

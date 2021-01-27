@@ -14,7 +14,7 @@
         android:roundIcon="@drawable/icom"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".cabangrincian"></activity>
+
         <activity android:name=".cabangpendaftaran" />
         <activity android:name=".tampilhutang.hutangtampil" />
         <activity android:name=".loginnomo.bismila" />
@@ -54,7 +54,8 @@
         <activity android:name=".profile.profileuser" />
         <activity android:name=".Ranting.LoginActivity" />
         <activity android:name=".loginnomo.MainActivity" />
-        <activity android:name=".Ranting.splace">
+        <activity android:name=".Ranting.splace"/>
+            <activity android:name=".cabangrincian">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -42,7 +42,7 @@ public class RekapReportActivity extends AppCompatActivity {
     private Button btnExport;
     private EditText txtNotes;
     private Spinner spnBulan, spnTahun;
-    private String strPemasukan;
+    private String strPemasukan,st;
 
     private static String[] arrayBulan = new String[]{
             "Pilih Bulan",
@@ -121,6 +121,7 @@ public class RekapReportActivity extends AppCompatActivity {
                     return;
                 }
                 strPemasukan = buatText();
+
             }
         });
     }
@@ -204,6 +205,10 @@ public class RekapReportActivity extends AppCompatActivity {
 
         return sb.toString();
     }
+
+
+
+
 
     private String formatrupiah(Double number){
         Locale localeID=new Locale("IDN","ID");

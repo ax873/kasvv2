@@ -31,7 +31,7 @@ import maruf.com.myapplication.Ranting.setter.kaslist;
 import maruf.com.myapplication.Ranting.setterr.setkas;
 
 public class MainTampil extends AppCompatActivity {
-    private ListView listviewkas;
+    private ListView listviewkas,listvi;
     public static final String KS_NAMA = "nama";
     public static final String KS_ID = "id";
     public static final String KS_RANTING = "ranting";
@@ -40,8 +40,9 @@ public class MainTampil extends AppCompatActivity {
     public static final String KS_TITLE = "title";
     EditText caari;
     TextView txtapayah;
-    DatabaseReference databasw1;
+    DatabaseReference databasw1,dat;
     List<setkas> kaslist;
+    List<setkas> kaslist1;
     Button klik;
     DatabaseReference databasekas;
 
@@ -52,8 +53,11 @@ public class MainTampil extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         databasw1 = database.getReference("message").child("ms");
         databasekas = FirebaseDatabase.getInstance().getReference("pemasukan");
+        dat = FirebaseDatabase.getInstance().getReference("pengeluaran");
         kaslist = new ArrayList<>();
+        kaslist1 = new ArrayList<>();
         listviewkas = (ListView) findViewById(R.id.lisviewkas);
+        listvi = (ListView) findViewById(R.id.lisviewkasa);
         txtapayah = (TextView) findViewById(R.id.idapayah);
         caari = findViewById(R.id.iidcari);
         klik = findViewById(R.id.idklikcari);
@@ -65,7 +69,29 @@ public class MainTampil extends AppCompatActivity {
             }
         });
 
+        dat.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                kaslist1.clear();
 
+                for (int a = 0; a < dataSnapshot.getChildrenCount(); a++) {
+
+                }
+
+                for (DataSnapshot setnapasopt : dataSnapshot.getChildren()) {
+                    setkas kas = setnapasopt.getValue(setkas.class);
+                    kaslist1.add(kas);
+                }
+                maruf.com.myapplication.Ranting.setter.kaslist adapter = new kaslist(MainTampil.this, kaslist1);
+                listvi.setAdapter(adapter);
+//
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         databasw1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -93,7 +119,20 @@ public class MainTampil extends AppCompatActivity {
 
             }
         });
-
+listvi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        setkas kas = kaslist1.get(position);
+        Intent a = new Intent(getApplicationContext(), MainUbah.class);
+        a.putExtra(KS_ID, kas.getIdkas());
+        a.putExtra(KS_NAMA, kas.getNama());
+        a.putExtra(KS_RANTING, kas.getRanting());
+        a.putExtra(KS_JUMLAH, kas.getJumlah());
+        a.putExtra(KS_DESK, kas.getDesk());
+        a.putExtra(KS_TITLE, kas.getTitle());
+        startActivity(a);
+    }
+});
         listviewkas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -118,6 +157,7 @@ public class MainTampil extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
 
 
         databasekas.addValueEventListener(new ValueEventListener() {

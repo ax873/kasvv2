@@ -65,6 +65,7 @@
         android:layout_width="wrap_content"
         android:text="Masuk Menggunakan NIW"
         android:onClick="nim"
+        android:visibility="invisible"
         android:textColor="@color/putiih"
 android:layout_gravity="center"
         android:textSize="10dp"
@@ -150,13 +151,7 @@ android:layout_gravity="center"
 
 
 </LinearLayout>
-    <Button
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Daftar Disini"
- android:onClick="daftar"
-        android:textColor="@color/putiih" />
+
 
     <TextView
         android:layout_width="wrap_content"
